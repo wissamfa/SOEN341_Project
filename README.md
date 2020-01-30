@@ -20,7 +20,7 @@ Team Members:
 - Mickael Bou-Samra ( Github: mbousamra )
 - Mohamad-Noaman Fawaz (Github: noamanfawaz)
 - Wissam Fallouh (Github: wissamfa)
-- <member 5>
+- Kinan Hamouda (Github: kinan93)
 
 
 Core Features: 
@@ -31,11 +31,12 @@ Core Features:
 
 Add-on Features ( ideas in progress ): 
 
-- <kinan>
-- <kinan>
-- <kinan>
-- <kinan>
-- <kinan>
+- Picture finder based on date of posting
+- Public or private account -> only followers are able to see the pictures
+- Blocking users
+- Liking a picture
+- Direct messages
+- Edit comments
 
 
 High-Level Stories: 
