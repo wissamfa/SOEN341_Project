@@ -15,15 +15,15 @@ Team Members:
 - Rami Ajam ( Github: RamiAjam )
 - Mickael Bou-Samra ( Github: mbousamra )
 - Mohamad-Noaman Fawaz (Github: noamanfawaz)
-- <member 4>
+- Wissam Fallouh (Gitjub: wissamfa)
 - <member 5>
 
 
 Core Features: 
 
-- <wissam> 
-- <wissam> 
-- <wissam> 
+- Creating Account (either private or public) 
+- Follow other accounts and perimt them to follow me
+- share a picture or a video on my account  
 
 Add-on Features ( ideas in progress ): 
 
