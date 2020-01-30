@@ -19,7 +19,7 @@ Team Members:
 - Rami Ajam ( Github: RamiAjam )
 - Mickael Bou-Samra ( Github: mbousamra )
 - Mohamad-Noaman Fawaz (Github: noamanfawaz)
-- Wissam Fallouh (Gitjub: wissamfa)
+- Wissam Fallouh (Github: wissamfa)
 - <member 5>
 
 
