@@ -2,12 +2,16 @@ SOEN 341
 
 Objective:
 
-Develop a simplified version of "Instagram" with five core features. 
+Develop a simplified version of "Instagram" with five core features.
 
 
 Project Description: 
 
-< wissam and kinan >
+The main goal of this project is to create or re-build the famous social media platform Insatgram.
+This will allow the users to create their own accounts, follow their friends 
+and post pictures and videos. such platform will be used as a communcation tool and a social media enterface. 
+Our aim is to go through the project design process in software, explore it's difficulties and hopefully solve them.
+
  
 
 Team Members: 
@@ -23,7 +27,7 @@ Core Features:
 
 - Creating Account (either private or public) 
 - Follow other accounts and perimt them to follow me
-- share a picture or a video on my account  
+- Share a picture or a video on my account  
 
 Add-on Features ( ideas in progress ): 
 
