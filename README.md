@@ -14,6 +14,7 @@ Team Members:
 
 - Rami Ajam ( Github: RamiAjam )
 - Mickael Bou-Samra ( Github: mbousamra )
+- Mohamad-Noaman Fawaz (Github: noamanfawaz)
 - <member 3>
 - <member 4>
 - <member 5>
@@ -37,7 +38,7 @@ Add-on Features ( ideas in progress ):
 High-Level Stories: 
 
 - As a user, I want to post a picture with a description for other users to view it.
-- <Noaman>
+- As a user, I want to follow other users to view their lifestyle.
 - As a user, I want to leave a comment on other people's pictures to express my opinion.
 
 
