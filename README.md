@@ -15,7 +15,6 @@ Team Members:
 - Rami Ajam ( Github: RamiAjam )
 - Mickael Bou-Samra ( Github: mbousamra )
 - Mohamad-Noaman Fawaz (Github: noamanfawaz)
-- <member 3>
 - <member 4>
 - <member 5>
 
