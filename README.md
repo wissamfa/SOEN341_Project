@@ -5,7 +5,7 @@
 Develop a simplified version of "Instagram" with five core features.
 
 
-Project Description: 
+## Project Description: 
 
 The main goal of this project is to create or re-build the famous social media platform Insatgram.
 This will allow the users to create their own accounts, follow their friends 
@@ -17,11 +17,11 @@ We would like to implement a web app that refelcts the previously mentioned poin
 
 ## Team Members: 
 
-1- Rami Ajam ( Github: RamiAjam )
-2- Mickael Bou-Samra ( Github: mbousamra )
-3- Mohamad-Noaman Fawaz (Github: noamanfawaz)
-4- Wissam Fallouh (Github: wissamfa)
-5- Kinan Hamouda (Github: kinan93)
+- Rami Ajam ( Github: RamiAjam )
+- Mickael Bou-Samra ( Github: mbousamra )
+- Mohamad-Noaman Fawaz (Github: noamanfawaz)
+- Wissam Fallouh (Github: wissamfa)
+- Kinan Hamouda (Github: kinan93)
 
 
 ## Core Features: 
