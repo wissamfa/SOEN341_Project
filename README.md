@@ -33,11 +33,7 @@ We would like to implement a web app that refelcts the previously mentioned poin
 ## Add-on Features ( ideas in progress ): 
 
 - Picture finder based on date of posting
-- Public or private account -> only followers are able to see the pictures
-- Blocking users
-- Liking a picture
-- Direct messages
-- Edit comments
+- Blocking users / Public or private account -> only followers are able to see the pictures
 
 
  ## High-Level Stories: 
