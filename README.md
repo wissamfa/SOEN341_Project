@@ -30,7 +30,7 @@ We would like to implement a web app that refelcts the previously mentioned poin
 - Follow other accounts and perimt them to follow me
 - Share a picture or a video on my account  
 
-## Add-on Features ( ideas in progress ): 
+## Add-on Features: 
 
 - Picture finder based on date of posting
 - Blocking users / Public or private account -> only followers are able to see the pictures
