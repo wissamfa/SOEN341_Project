@@ -47,7 +47,7 @@ We would like to implement a web app that refelcts the previously mentioned poin
 
 - Front-End: Angular 
 - Firebase 
-- Back-End: Python
+- Back-End: Java
 
 
 
