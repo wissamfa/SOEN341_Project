@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.router.navigate(['/profile'])
-
   }
 
   // convenience getter for easy access to form fields

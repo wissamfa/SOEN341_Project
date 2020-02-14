@@ -1,0 +1,113 @@
+<div style="background-color: #F5F5F5; padding: 10px 100px 100px 100px;">
+    <div class="container">
+      <form [formGroup]="registerForm" class="container d-flex align-items-center justify-content-center flex-column login">
+        <h1 style="padding: 25px;">Create a New Account</h1>
+        <div class="form-group inp">
+          <label for="exampleInputEmail1">Username</label>
+          <input type="text"
+                 name="username"
+                 class="form-control"
+                 formControlName="username"
+                 id="exampleInputEmail1"
+                 aria-describedby="emailHelp"
+                 placeholder="Username"
+                 [ngClass]="{ 'is-invalid': submitted && g.username.errors }" />
+          <div *ngIf="submitted && g.username.errors" class="invalid-feedback">
+            <div *ngIf="g.username.errors.required">Username is required</div>
+          </div>
+        </div>
+        <div class="form-group inp">
+          <label for="exampleInputPassword1">Password</label>
+          <input name="password"
+                 type="password"
+                 formControlName="password"
+                 class="form-control"
+                 id="exampleInputPassword"
+                 placeholder="Password"
+                 [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
+                 required />
+          <div *ngIf="submitted && g.password.errors" class="invalid-feedback">
+            <div *ngIf="g.password.errors.required">Password is required</div>
+            <div *ngIf="g.password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+        </div>
+        <div class="form-group inp">
+          <label for="exampleInputPassword2">Confirm Password</label>
+          <input name="passwordConfirm"
+                 type="password"
+                 class="form-control"
+                 formControlName="confirmPassword"
+                 id="exampleConfirmPassword"
+                 placeholder="Confirm Password"
+                 [ngClass]="{ 'is-invalid': submitted && g.confirmPassword.errors }"
+                 required />
+          <div *ngIf="submitted && g.confirmPassword.errors" class="invalid-feedback">
+            <div *ngIf="g.confirmPassword.errors.required">Confirm Password is required</div>
+            <div *ngIf="g.confirmPassword.errors.mustMatch">Passwords must match</div>
+          </div>
+        </div>
+        <div class="form-group inp">
+          <label for="exampleInputEmail">Email</label>
+          <input name="email"
+                 type="email"
+                 formControlName="email"
+                 class="form-control"
+                 id="exampleInputEmail"
+                 placeholder="Email"
+                 [ngClass]="{ 'is-invalid': submitted && g.email.errors }"
+                 required />
+          <div *ngIf="submitted && g.email.errors" class="invalid-feedback">
+            <div *ngIf="g.email.errors.required">Email is required</div>
+            <div *ngIf="g.email.errors.email">Email must be a valid email address</div>
+          </div>
+        </div>
+  
+        <div class="form-group inp">
+          <!-- Left out age for no specific reason, should be the same A.J-->
+          <label for="exampleInputAge">Age</label>
+          <input name="age"
+                 type="number"
+                 class="form-control"
+                 formControlName="userAge"
+                 id="exampleInputAge"
+                 placeholder="Age"
+                 [ngClass]="{ 'is-invalid': submitted && g.userAge.errors }"
+                 required />
+          <div *ngIf="submitted && g.userAge.errors" class="invalid-feedback">
+            <div *ngIf="g.userAge.errors.required">Age is required</div>
+          </div>
+        </div>
+            <label class="image-upload-container btn btn-bwm">
+              <span>Select Image</span>
+              <input #imageInput
+                     type="file"
+                     formControlName="userAge"
+                     accept="image/*"
+                     (change)="readUrl($event)"
+                     (change)="processFile(imageInput)">
+            </label>
+            <div *ngIf="selectedFile" class="img-preview-container">
+  
+              <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
+                   [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
+              </div>
+  
+              <div *ngIf="selectedFile.pending" class="img-loading-overlay">
+                <div class="img-spinning-circle"></div>
+              </div>
+  
+              <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
+              <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+            </div>
+  
+  
+        <button type="submit"
+                (click)="checkup()"
+                class="btn btn-primary inp inp-btn"
+                >
+          Sign up
+        </button>
+      </form>
+    </div>
+  </div>
+  

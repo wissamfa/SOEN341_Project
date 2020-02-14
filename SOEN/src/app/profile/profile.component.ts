@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  witObject = {};
+  replyObject = {};
+  @ViewChild('replyPost') replyPost: ElementRef;
+  @ViewChild('witPost') witPost: ElementRef;
 
-  constructor() { }
+  userWits: any;
+  userData: any;
+  likesOfWits: any;
+  listOfFollowing: any;
+  listOfFollowers: any;
+  likedWits: any;
+  userLoggedIN: any;
+  userObj: any = {};
 
-  ngOnInit(): void {
+  user = {};
+  likesListProfile = [];
+
+  constructor(
+    // private snackBar: MatSnackBar,
+    private router: ActivatedRoute,
+  ) {
+  }
+
+  ngOnInit() {
+    this.user = {
+      'username': 'wissam'
+    };
+    console.log(this.user);
+    
   }
 
 }
