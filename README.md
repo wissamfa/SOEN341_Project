@@ -26,7 +26,7 @@ We would like to implement a web app that refelcts the previously mentioned poin
 
 ## Core Features: 
 
-- Creating Account (either private or public) 
+- Commenting on a picture  
 - Follow other accounts and perimt them to follow me
 - Share a picture or a video on my account  
 
