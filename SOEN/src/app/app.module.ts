@@ -11,13 +11,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserInfoComponent } from './profile/user-info/user-info.component';
 // import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
