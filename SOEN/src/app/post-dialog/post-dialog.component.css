@@ -1,0 +1,14 @@
+div {
+    color: black;
+}
+
+.comment-user-image {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+}
+
+.post-image {
+    height: 22rem;
+    width: 15rem;
+}
