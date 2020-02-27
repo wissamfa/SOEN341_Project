@@ -9,9 +9,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './profile/profile.component';
 import { UserInfoComponent } from './profile/user-info/user-info.component';
-// import { MatDividerModule } from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
 import { RegisterComponent } from './register/register.component';
+import { ForgetModule } from './forget/forget.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListOfPostsComponent } from './profile/list-of-posts/list-of-posts.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,8 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     ProfileComponent,
     UserInfoComponent,
-    RegisterComponent
+    RegisterComponent,
+    ListOfPostsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +32,10 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    ForgetModule,
+    MatButtonModule,
+    MatToolbarModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
