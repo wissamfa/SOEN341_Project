@@ -8,7 +8,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class UserInfoComponent implements OnInit {
   @Input() userData;
   @Output() refreshUserInfo = new EventEmitter<any>();
-  userLoggedIN: any;
 
   constructor(
     ) {}

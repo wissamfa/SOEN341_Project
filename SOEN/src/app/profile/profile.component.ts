@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,35 +7,32 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  witObject = {};
-  replyObject = {};
-  @ViewChild('replyPost') replyPost: ElementRef;
-  @ViewChild('witPost') witPost: ElementRef;
-
-  userWits: any;
+  userPosts: any;
   userData: any;
-  likesOfWits: any;
-  listOfFollowing: any;
-  listOfFollowers: any;
-  likedWits: any;
-  userLoggedIN: any;
-  userObj: any = {};
 
   user = {};
   likesListProfile = [];
 
   constructor(
-    // private snackBar: MatSnackBar,
     private router: ActivatedRoute,
   ) {
   }
 
   ngOnInit() {
     this.user = {
-      'username': 'wissam'
+      'username': 'Brad Pitt',
+      'name': 'Brad',
+      'posts': 20,
+      'followers': 1500,
+      'following': 700,
+      'bio': 'This is my bio'
     };
-    console.log(this.user);
-    
+
+    this.userPosts = [
+      { 'numberOfLikes': 0, 'numberOfComments': 0, 'imageUrl': 'http://tiny.cc/pv5jkz'},
+      { 'numberOfLikes': 0, 'numberOfComments': 0, 'imageUrl': 'http://tiny.cc/jw5jkz'},
+      { 'numberOfLikes': 0, 'numberOfComments': 0, 'imageUrl': ''},
+    ]
   }
 
 }
