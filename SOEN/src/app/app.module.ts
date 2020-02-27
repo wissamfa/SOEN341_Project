@@ -16,6 +16,9 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListOfPostsComponent } from './profile/list-of-posts/list-of-posts.component';
+import { PostDialogComponent } from './post-dialog/post-dialog.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { ListOfPostsComponent } from './profile/list-of-posts/list-of-posts.comp
     ProfileComponent,
     UserInfoComponent,
     RegisterComponent,
-    ListOfPostsComponent
+    ListOfPostsComponent,
+    PostDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { ListOfPostsComponent } from './profile/list-of-posts/list-of-posts.comp
     ForgetModule,
     MatButtonModule,
     MatToolbarModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
