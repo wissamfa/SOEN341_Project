@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { GlobalEventsService } from 'src/app/global-events.service';
 
 @Component({
   selector: 'app-user-info',
@@ -9,12 +11,14 @@ export class UserInfoComponent implements OnInit {
   @Input() userData;
   @Output() refreshUserInfo = new EventEmitter<any>();
 
-  constructor(
-    ) {}
+  constructor(private auth: AuthService, private globalEvents: GlobalEventsService) {}
 
   ngOnInit() {
-    console.log(this.userData);
-    
+  }
+
+  logout() {
+    this.auth.doLogout();
+    this.globalEvents.showNavBar(false);
   }
 
 }
