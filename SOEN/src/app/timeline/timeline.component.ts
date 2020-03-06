@@ -1,15 +1,16 @@
-import { Component, OnInit, Inject } from "@angular/core";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { faHeart, faTrashAlt } from '@fortawesome/free-regular-svg-icons'
+import { Component, OnInit } from '@angular/core';
+import { faHeart, faComment } from '@fortawesome/free-regular-svg-icons'
 
 @Component({
-  selector: "app-post-dialog",
-  templateUrl: "./post-dialog.component.html",
-  styleUrls: ["./post-dialog.component.css"]
+  selector: 'app-timeline',
+  templateUrl: './timeline.component.html',
+  styleUrls: ['./timeline.component.css']
 })
-export class PostDialogComponent implements OnInit {
-  id: number;
-  trash = faTrashAlt;
+export class TimelineComponent implements OnInit {
+  posts: Array<Object>;
+  heart = faHeart;
+  comment = faComment;
+
   post = {
     id: 1,
     numberOfLikes: 10,
@@ -26,18 +27,16 @@ export class PostDialogComponent implements OnInit {
     ]
   };
 
-  heart = faHeart;
-
-  constructor(
-    public dialogRef: MatDialogRef<PostDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data
-  ) {}
+  constructor() { }
 
   ngOnInit(): void {
-    this.id = this.data.id;
+    this.posts = [
+      { 'id': 1, 'numberOfLikes': 0, 'numberOfComments': 0, 'imageUrl': ''},
+      { 'id': 2, 'numberOfLikes': 0, 'numberOfComments': 0, 'imageUrl': ''},
+      { 'id': 3,'numberOfLikes': 0, 'numberOfComments': 0, 'imageUrl': ''},
+    ];
   }
 
-  delete(){
-    this.post.comments.pop();
-  }
+  
+
 }

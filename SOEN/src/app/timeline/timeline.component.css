@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2rem 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-image {
+  width: -webkit-fill-available;
+  height: intrinsic;
+  margin-top: 2rem;
+}
+
+div {
+    color: black;
+}
+
+.comment-user-image {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+}

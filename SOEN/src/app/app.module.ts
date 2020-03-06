@@ -27,6 +27,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule} from '@angular/fire/database';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NewsfeedComponent } from './newsfeed/newsfeed.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 
 
@@ -51,7 +52,8 @@ const environment = {
     ListOfPostsComponent,
     PostDialogComponent,
     NavBarComponent,
-    NewsfeedComponent
+    NewsfeedComponent,
+    TimelineComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment),

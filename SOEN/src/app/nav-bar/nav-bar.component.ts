@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faCompass, faHeart } from '@fortawesome/free-regular-svg-icons'
+import { faCompass, faHeart, faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { GlobalEventsService } from '../global-events.service';
 
@@ -16,15 +16,9 @@ export class NavBarComponent implements OnInit {
   search = faSearch;
   compass = faCompass;
   heart = faHeart;
-
-  showToolbar = false;
+  user = faUser;
 
   constructor(private globalEventsManager: GlobalEventsService) { 
-    this.globalEventsManager.showNavBarEmitter.subscribe((mode)=>{
-      console.log(mode);
-      
-        this.showToolbar = mode;
-    });
     
 }
 
