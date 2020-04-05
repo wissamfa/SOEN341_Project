@@ -1,0 +1,22 @@
+
+## Coding Style: 
+
+The team used a specfic coding style when we wrote the code. For example, the brackets for each function or if/while 
+statements should start and end on the same vertical line. This also applies for the HTML tags. 
+
+Ex: <div>
+        <p>
+        </p>
+    </div>
+
+Another coding style we used was anything inside the HTML tags or the if/while statemtns of the functions, must be 
+indented an extra tab space. The example above shows how the <p> tag was indented because it is inside the <div> tag
+ 
+
+## Naming Convention: 
+
+The team used the C-style naming convention when writing the code. This means that when we created a variable or a
+function, the name of the variable or function ( if it consisted of 2 or more words ) was separated by and "_"
+
+Ex: the get posts function was called as " get_function() "
+
