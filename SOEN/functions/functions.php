@@ -467,7 +467,6 @@ function single_post(){
 }
 
 
-
 //function for displaying user posts
 function user_posts(){
 
@@ -654,6 +653,8 @@ function user_posts(){
 
 
 
+
+
 //function for displaying search results
 function results(){
 
@@ -794,4 +795,67 @@ function results(){
 	}
 }
 
+
+// allos  the user to search for another user 
+function search_user(){
+
+	global $con;
+
+	// get the name ( the person the user is searching for ) the user inputed from the website 
+	if(isset($_GET['search_user_btn'])){
+		
+		$search_query = htmlentities($_GET['search_user']);
+		// use that name and search through the whole users table for anything similar to that name ( first name, last name, or user name)
+		$get_user = "SELECT * from users where f_name like '%$search_query%' OR l_name like '%$search_query%' OR user_name like '%$search_query%'";
+	}
+
+	else{ // if the person is not found, we will show all the other users in the database 
+
+		$get_user = "SELECT * from users";
+	}
+
+	$run_user = mysqli_query($con,$get_user);
+
+	while($row_user=mysqli_fetch_array($run_user)){
+
+		$user_id = $row_user['user_id'];
+		$f_name = $row_user['f_name'];
+		$l_name = $row_user['l_name'];
+		$username = $row_user['user_name'];
+		$user_image = $row_user['user_image'];
+
+		// if the user hovers the mouse over the image, it will show the user's username ( this is the first <a> tag )
+		// near the 2nd <a> tag, we will show the user's first name and last name 
+		echo "
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div>
+				<div class='col-sm-6'>
+					<div class='row' id='find_people'>
+						<div class='col-sm-4'>
+							<a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>
+							<img class='img-circle' src='users/$user_image' width='150px' height='140px' title='$username' style='float:left; margin:1px;'/>
+							</a>
+						</div><br><br>
+						<div class='col-sm-6'>
+							<a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>
+							<strong><h2>$f_name $l_name</h2></strong>
+							</a>
+						</div>
+						<div class='col-sm-3'>
+						</div>
+					</div>
+				</div>
+				<div class='col-sm-4'>
+				</div>
+			</div><br>
+		";
+
+	}
+
+}
+
+
+
+?>
 
