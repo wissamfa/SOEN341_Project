@@ -1,0 +1,127 @@
+
+/* remove the horizontal line scrolling of the page  */ 
+body{
+	overflow-x: hidden;
+}
+
+/* style for the select image button in the home page */
+#upload_image_button{
+	position: absolute;
+	top: 50.5%;
+	right: 14.2%;
+	min-width: 100px;
+	max-width: 100px;
+	border-radius: 4px;
+	transform: translate(-50%, -50%);
+}
+
+/* style for the "select cover" and "select profile" buttons */
+label{
+	padding: 7px;
+	display: table;
+	color: #fff;
+}
+
+/* style for the input after the "select cover" and "select profile" buttons are clicked */
+input[type="file"]{
+	display: none;
+}
+
+/* Style for the text the user will post */
+#content{
+	width: 70%;
+}
+
+/* style for the post button in the home page */
+#btn-post{
+	min-width: 25%;
+	max-width: 25%;
+}
+
+/* style for the top side of the home page where the users will create their posts */
+#insert_post{
+	background-color: #fff;
+	border: 2px solid #e6e6e6;
+	padding: 40px 50px;
+}
+
+/* style for the post in the home page ( putting them in a box */
+#posts{
+	border: 5px solid #e6e6e6;
+	padding: 40px 50px;
+}
+
+/* style for the image chosen by the user*/
+#posts-img{
+	padding-top: 5px;
+	padding-right: 10px;
+	min-width: 102%;
+	max-width: 50%;
+}
+
+/* style for the comment section in the comment page */
+#single_posts{
+	border: 5px solid #e6e6e6;
+	padding: 40px 50px;
+}
+
+/* style for the comment box ( conatainer ) in the comment page */
+.pb-cmnt-container{
+	font-family: Lato;
+	margin-top: 100px;
+}
+
+/* style for the comment section in the comment page */
+.pb-cmnt-textarea{
+	resize: nopne;
+	padding: 20px;
+	height: 110px;
+	width: 100%;
+	border: 1px solid #F2F2F2;
+}
+
+/* style for the search button in the find people page */
+#find_people{
+    border: 5px solid #e6e6e6;
+    padding: 40px 50px;
+}
+
+/* style for the search button in the find people page */
+#result_posts{
+    border: 5px solid #e6e6e6;
+    padding: 40px 50px;
+}
+
+/* style for the input box in the find people page */
+form.search_form input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+	  border-radius:4px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+/* style for the search button in the find people page */
+form.search_form button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+/* style for the search button in the find people page */
+form.search_form button:hover {
+    background: #0b7dda;
+}
+
+/* style for the search button in the find people page */
+form.search_form::after {
+    content: "";
+    clear: both;
+    display: table;
+}
