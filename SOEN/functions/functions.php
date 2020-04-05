@@ -251,3 +251,220 @@ function get_posts(){
 
 
 
+
+// Add a functionality for the view button in the profile page 
+function single_post(){
+
+	if(isset($_GET['post_id'])){
+		
+		// globalize the connection variable
+		global $con;
+
+		// get the post id from the website 
+		$get_id = $_GET['post_id'];
+
+		// from that post id access the database to get post id, user id, content of the post, image, and the post date 
+		$get_posts = "SELECT * from posts where post_id='$get_id'";
+		$run_posts = mysqli_query($con, $get_posts);
+		$row_posts = mysqli_fetch_array($run_posts);
+
+		$post_id = $row_posts['post_id'];
+		$user_id = $row_posts['user_id'];
+		$content = $row_posts['post_content'];
+		$upload_image = $row_posts['upload_image'];
+		$post_date = $row_posts['post_date'];
+
+		// from the user id, access the databas to get the user's name and the image they posted
+		$user = "SELECT * from users where user_id='$user_id' AND posts='yes'";
+		$run_user = mysqli_query($con, $user);
+		$row_user = mysqli_fetch_array($run_user);
+
+		$user_name = $row_user['user_name'];
+		$first_name = $row_user['f_name'];
+		$last_name = $row_user['l_name'];
+		$user_image = $row_user['user_image'];
+
+		// get the email of the user that is logged in 
+		$user_com = $_SESSION['user_email'];
+
+		// from that email access the database and get the user's id and name 
+		$get_com = "SELECT * from users where user_email='$user_com'";
+		$run_com = mysqli_query($con, $get_com);
+		$row_com = mysqli_fetch_array($run_com);
+
+		$user_com_id = $row_com['user_id'];
+		$user_com_name = $row_com['user_name'];
+
+
+		// get the post's id from the website 
+		if(isset($_GET['post_id'])){
+			$post_id = $_GET['post_id'];
+		}
+
+		// using that post id get the post id from the users table 
+		$get_posts = "SELECT post_id from users where post_id='$post_id'";
+		$run_user = mysqli_query($con, $get_posts);
+
+		// get the post id from the URL
+		$post_id = $_GET['post_id'];
+
+
+		$post = $_GET['post_id'];
+
+		// search the posts table were the post id is te same as the one we found 
+		$get_user = "SELECT * from posts where post_id='$post'";
+		$run_user = mysqli_query($con, $get_user);
+		$row = mysqli_fetch_array($run_user);
+
+		$p_id = $row['post_id'];
+
+
+		// if the ID of the post that we are showing is not equal to the post ID of what the user clicked 
+		if($p_id != $post_id){
+
+			echo"<script>alert('Security Breach !!!')</script>";
+			echo"<script>window.open('home.php','_self')</script>";
+
+		}else{
+
+			// if the post contains only an image with no description 
+			if($content=="No" && strlen($upload_image) >= 1){
+				echo"
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+					<div id='posts' class='col-sm-6'>
+						<div class='row'>
+							<div class='col-sm-2'>
+							<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+							</div>
+							<div class='col-sm-6'>
+								<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$first_name $last_name <h6>( $user_name )</h6></a></h3>
+								<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+							</div>
+							<div class='col-sm-4'>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
+							</div>
+						</div><br>
+					</div>
+					<div class='col-sm-3'>
+					</div>
+				</div><br><br>
+				";
+			}
+
+			// if the post contains both an image and a description 
+			else if(strlen($content) >= 1 && strlen($upload_image) >= 1){
+				echo"
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+					<div id='posts' class='col-sm-6'>
+						<div class='row'>
+							<div class='col-sm-2'>
+							<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+							</div>
+							<div class='col-sm-6'>
+								<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$first_name $last_name <h6>( $user_name )</h6></a></h3>
+								<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+							</div>
+							<div class='col-sm-4'>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<h4><p>$content</p></h4>
+								<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
+							</div>
+						</div><br>
+					</div>
+					<div class='col-sm-3'>
+					</div>
+				</div><br><br>
+				";
+			}
+
+			// if the post contains only text 
+			else{
+				echo"
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+					<div id='posts' class='col-sm-6'>
+						<div class='row'>
+							<div class='col-sm-2'>
+							<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+							</div>
+							<div class='col-sm-6'>
+								<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$first_name $last_name <h6>( $user_name )</h6></a></h3>
+								<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+							</div>
+							<div class='col-sm-4'>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<h4><p>$content</p></h4>
+							</div>
+						</div><br>
+					</div>
+					<div class='col-sm-3'>
+					</div>
+				</div><br><br>
+				";
+			}
+
+			// allows the user to add a comment to the post 
+			include("comments.php");
+
+
+			// creating a text area for the user to be able to leave a comment 
+			echo"
+				<div class='row'>
+					<div class='col-sm-6 col-md-offset-3'>
+						<div class='panel panel-info'>
+							<div class='panel-body'>
+								<form action='' method='post' class='form-inline'>
+									<textarea placeholder='Write your comment here ...' class='pb-cmnt-textarea' name='comment'></textarea>
+									<button class='btn btn-info pull-right' name='reply'>Comment</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			";
+
+			//if the comment button is ciicked
+			if(isset($_POST['reply'])){
+				$comment = htmlentities($_POST['comment']);
+			
+				// if the user did not write anything in the comment 
+				if($comment == ""){
+					echo"<script>alert('Enter a comment !!!')</script>";
+					echo"<script>windw.open('single.php?post_id=$post_id','_self')</script>";
+				}else{ // if the user entered a comment, then post the comment 
+
+					// insert the comment to the database ( in the table called comment)
+					$insert = "INSERT into comments (post_id,user_id,comment,comment_author,date) values('$post_id','$user_id','$comment','$user_com_name',NOW())";
+
+
+					$run = mysqli_query($con, $insert);
+					echo"<script>alert('Comment is added')</script>";
+					echo"<script>window.open('single.php?post_id=$post_id','_self')</script>";
+
+				}
+			}
+
+		}
+
+
+	}
+
+}
+
+
+
