@@ -2,7 +2,7 @@
 
 ## Objective:
 
-Develop a simplified version of "Instagram" with five core features.
+Develop a simplified version of "Instagram" called "TheGram" with five core features.
 
 
 ## Project Description: 
