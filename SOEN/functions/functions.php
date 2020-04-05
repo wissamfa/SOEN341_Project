@@ -468,3 +468,190 @@ function single_post(){
 
 
 
+//function for displaying user posts
+function user_posts(){
+
+	// globalize the connection variable
+	global $con;
+
+	// get the user id from the URL 
+	if(isset($_GET['u_id'])){
+		$u_id = $_GET['u_id'];
+	}
+
+	// the number of posts that will be shown in each page
+	$per_page = 5;
+
+	// if the user changes the page, then display that page, otherwise display page 1 
+	if(isset($_GET['page'])){
+		$page = $_GET['page'];
+	}else{
+		$page=1;
+	}
+
+	$start_from = ($page-1) * $per_page;
+
+	// using that id access the posts table and get all the posts 
+	$get_posts = "SELECT * from posts where user_id='$u_id' ORDER by 1 DESC LIMIT $start_from, $per_page";
+	$run_posts = mysqli_query($con,$get_posts);
+
+
+	while($row_posts=mysqli_fetch_array($run_posts)){
+
+		$post_id = $row_posts['post_id'];
+		$user_id = $row_posts['user_id'];
+		$content = $row_posts['post_content'];
+		$upload_image = $row_posts['upload_image'];
+		$post_date = $row_posts['post_date'];
+
+		// access the database and get the user information from the users table
+		$user = "SELECT * from users where user_id='$user_id' AND posts='yes'";
+
+		$run_user = mysqli_query($con,$user);
+		$row_user=mysqli_fetch_array($run_user);
+
+		$user_name = $row_user['user_name'];
+		$first_name = $row_user['f_name'];
+		$last_name = $row_user['l_name'];
+		$user_image = $row_user['user_image'];
+
+
+		//get the user's id from the URL
+		if(isset($_GET['u_id'])){
+			$u_id = $_GET['u_id'];
+		}
+
+
+		$get_posts = "SELECT user_email from users where user_id='$u_id'";
+		$run_user = mysqli_query($con,$get_posts);
+		$row=mysqli_fetch_array($run_user);
+
+		// get the user's email from the id we obtained fro mthe url 
+		$user_email = $row['user_email'];
+
+		// get the email of the user that is currently logged in 
+		$user = $_SESSION['user_email'];
+
+		//access the database and get the currently logged in user's id and email 
+		$get_user = "SELECT * from users where user_email='$user'";
+		$run_user = mysqli_query($con,$get_user);
+		$row=mysqli_fetch_array($run_user);
+
+		$user_id = $row['user_id'];
+		$u_email = $row['user_email'];
+
+		// if the currently logged in user email and the email we got from the id of the url do not match, refresh the page 
+		if($u_email != $user_email){
+			echo"<script>alert('Security Breach !!!')</script>";
+			echo"<script>window.open('my_post.php?u_id=$user_id','_self')</script>";
+		}else{
+
+			// if the post contains only an image with no description 
+			if($content=="No" && strlen($upload_image) >= 1){
+
+			echo "
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+					<div id='posts' class='col-sm-6'>
+						<div class='row'>
+							<div class='col-sm-2'>
+								<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+							</div>
+							<div class='col-sm-6'>
+								<h3><a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>$first_name $last_name <h6>( $user_name )</a></h3>
+								<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+							</div>
+							<div class='col-sm-4'>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
+							</div>
+						</div><br>
+						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
+					</div>
+					<div class='col-sm-3'>
+					</div>
+				</div><br><br>
+			";
+
+			}
+			// if the post contains both an image and a description 
+			else if(strlen($content) >= 1 && strlen($upload_image) >= 1){
+
+				echo "
+					<div class='row'>
+						<div class='col-sm-3'>
+						</div>
+						<div id='posts' class='col-sm-6'>
+							<div class='row'>
+								<div class='col-sm-2'>
+									<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+								</div>
+								<div class='col-sm-6'>
+									<h3><a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>$first_name $last_name <h6>( $user_name )</a></h3>
+									<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+								</div>
+								<div class='col-sm-4'>
+
+								</div>
+							</div>
+							<div class='row'>
+								<div class='col-sm-12'>
+									<h4><p>$content</p></h4>
+									<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
+								</div>
+							</div><br>
+							<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
+						</div>
+						<div class='col-sm-3'>
+						</div>
+					</div><br><br>
+				";
+
+			}else{
+
+			// if the post contains only text 
+			echo "
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+					<div id='posts' class='col-sm-6'>
+						<div class='row'>
+							<div class='col-sm-2'>
+								<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+							</div>
+							<div class='col-sm-6'>
+								<h3><a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>$first_name $last_name <h6>( $user_name )</a></h3>
+								<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+							</div>
+							<div class='col-sm-4'>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<h4><p>$content</p></h4>
+							</div>
+						</div>
+						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
+					</div>
+					<div class='col-sm-3'>
+					</div>
+				</div><br><br>
+			";
+
+			}
+			// adds the functionality for the delete button 
+			include("functions/delete_post.php");
+		}
+	}
+
+	// Divides how the posts will be posted in the pages and link to the pages  
+	include("pagination_mypost.php");
+}
+
+
+
+
