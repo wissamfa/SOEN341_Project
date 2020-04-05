@@ -21,7 +21,6 @@ We would like to implement a web app that refelcts the previously mentioned poin
 - Mickael Bou-Samra ( Github: mbousamra )
 - Mohamad-Noaman Fawaz (Github: noamanfawaz)
 - Wissam Fallouh (Github: wissamfa)
-- Kinan Hamouda (Github: kinan93)
 
 
 ## Core Features: 
@@ -32,8 +31,8 @@ We would like to implement a web app that refelcts the previously mentioned poin
 
 ## Add-on Features: 
 
-- Picture finder based on date of posting
-- Blocking users / Public or private account -> only followers are able to see the pictures
+- As a user, i want to edit all my account information 
+- As a user, i want to direct message any user.
 
 
  ## High-Level Stories: 
@@ -45,9 +44,10 @@ We would like to implement a web app that refelcts the previously mentioned poin
 
 ## Technologies:
 
-- Front-End: Angular 
-- Firebase 
-- Back-End: JavaScript
+- Front-End: HTML, CSS, Javascript 
+- Database: MySQL 
+- Back-End: PHP
+- Server: XAMPP
 
 
 
