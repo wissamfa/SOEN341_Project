@@ -16,7 +16,7 @@ indented an extra tab space. The example above shows how the <p> tag was indente
 ## Naming Convention: 
 
 The team used the C-style naming convention when writing the code. This means that when we created a variable or a
-function, the name of the variable or function ( if it consisted of 2 or more words ) was separated by and "_"
+function, the name of the variable or function ( if it consisted of 2 or more words ) was separated by an "_"
 
 Ex: the get posts function was called as " get_function() "
 
