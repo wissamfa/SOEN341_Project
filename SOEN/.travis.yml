@@ -1,8 +1,26 @@
 language: php
+
 php:
  -"7.4.3"
-befor_script:
-- composer install --no-interaction
-
+ 
+services:
+ - mysql
+ 
+test:
+ - mysql
+ 
+before_install:
+ - composer self-update
+ 
+install:
+ - composer install
+ - cp app/config/parameters.yml.dist app/config/parameters.yml
+ -  php bin/console doctrine:database:create --env=test
+ - php bin/console doctrine:schema:create --env=test
+ - php bin/console doctrine:fixtures:load -n --env=test
+ 
 script:
-- vendor/bin/phpunit
+ - phpunit 
+  
+notifications:
+  email: wissam.fa@hotmail.com
