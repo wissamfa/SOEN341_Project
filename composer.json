@@ -77,7 +77,6 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/"
         ],
         "files": [
             ""
