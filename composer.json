@@ -69,10 +69,10 @@
     ],
     "autoload": {
         "classmap": [
-            "src/"
+            "SOEN/"
         ],
         "files": [
-            "src/Framework/Assert/Functions.php"
+            ""
         ]
     },
     "autoload-dev": {
@@ -80,9 +80,7 @@
             "tests/"
         ],
         "files": [
-            "tests/_files/CoverageNamespacedFunctionTest.php",
-            "tests/_files/CoveredFunction.php",
-            "tests/_files/NamespaceCoveredFunction.php"
+            ""
         ]
     },
     "extra": {
