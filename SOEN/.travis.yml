@@ -48,6 +48,16 @@ notifications:
    on_success: never
 
    on_failure: always
+   
+   
+# Start mysql service
+
+services:
+
+ - mysql
+ 
+script:
+ - phpunit
 
 
 # After a build, send email notification with the build results
