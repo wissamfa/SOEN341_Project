@@ -8,7 +8,7 @@ $con = mysqli_connect("localhost","root","","social_network") or die("Connection
 if(isset($_GET['post_id'])){
     $post_id = $_GET['post_id'];
 
-    // access the database and delete the
+    // access the database and delete the post 
     $delete_post = "DELETE from posts where post_id ='$post_id'";
     $run_delete = mysqli_query($con, $delete_post);
 
