@@ -33,6 +33,11 @@ matrix:
    - php: hhvm
 
  fast_finish: true
+ 
+# Branch 
+branches:
+  only: 
+    - master
 
 # Customize when the notification emails are sent.
 
