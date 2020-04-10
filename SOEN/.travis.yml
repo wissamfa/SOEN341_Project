@@ -34,11 +34,6 @@ matrix:
 
  fast_finish: true
  
-# Branch 
-branches:
-  only: 
-    - master
-
 # Customize when the notification emails are sent.
 
 notifications:
