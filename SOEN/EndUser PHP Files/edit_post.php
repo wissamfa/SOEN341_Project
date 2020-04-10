@@ -8,7 +8,7 @@ session_start();
 include("includes/header.php");
 
 
-// allows us to directly go to the main page when we run our localhost 
+// allows us to directly go to the main page when we run localhost 
 if(!isset($_SESSION['user_email'])){
 	header("location: index.php");
 }
