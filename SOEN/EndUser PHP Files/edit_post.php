@@ -4,7 +4,7 @@
 
 session_start();
 
-// allows us to access the variables we created in the header file 
+// allows us to access the variables we created in header file 
 include("includes/header.php");
 
 
