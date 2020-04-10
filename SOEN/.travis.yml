@@ -7,6 +7,13 @@ language: php
 php:
 
  - 7.4.3
+ 
+addons:
+ apt:
+  sources:
+   - google-chrome
+   packages:
+   - google-chrome-stable
 
 # Commands to be run before your environment runs.
 
