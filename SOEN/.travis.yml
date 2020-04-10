@@ -57,6 +57,8 @@ services:
  - mysql
  
 os: osx
+
+install: php vendor/vendors.php
  
 script:
  - phpunit
