@@ -4,7 +4,7 @@
 // allow us to connect to the database
 $con = mysqli_connect("localhost","root","","social_network") or die("Connection was not established");
 
-// get the post id and store it in a variable
+// get the post id and store it
 if(isset($_GET['post_id'])){
     $post_id = $_GET['post_id'];
 
