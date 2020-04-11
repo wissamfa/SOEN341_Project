@@ -49,6 +49,7 @@ else{ // else starts here ?>
             overflow:scroll;
         }
 
+	    
         /* style for the blue messages ( from the sender */
         #green{
             background-color: #2ecc71;
