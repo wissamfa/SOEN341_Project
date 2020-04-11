@@ -4,7 +4,7 @@
 <!-- display the comment section on the picture chosen by the user -->
 <?php 
 
-    // get the id from the website 
+    // get the id from the website.
     $get_id = $_GET['post_id'];
 
     // access the databasse using that id tp get all the comments 
