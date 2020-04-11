@@ -21,7 +21,7 @@ function insertPost(){
 		$upload_image = $_FILES['upload_image']['name'];
         $image_tmp = $_FILES['upload_image']['tmp_name'];
 
-        // generate a random number ; the random number is used to make the pictures uploaded to be unique 
+        // generate a random number : the random number is used to make the pictures uploaded to be unique 
 		$random_number = rand(1, 10000);
 
 
