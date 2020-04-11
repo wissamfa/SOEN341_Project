@@ -6,7 +6,8 @@ session_start();
 // allows us to access the variables we created in the header file 
 include("includes/header.php");
 
-// allows us to directly go to the main page when we run our localhost 
+// allows us to directly go to the main page when we run our localhost
+
 if(!isset($_SESSION['user_email'])){
 	header("location: index.php");
 }
