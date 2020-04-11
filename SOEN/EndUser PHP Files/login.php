@@ -19,7 +19,7 @@ include("includes/connection.php");
         // this checks all the usernames and emails in the database one by one. It also checks if the account is verified
 		$check_user = mysqli_num_rows($query);
 
-        // if the username and email is found in the database, log them in and take them to the home page
+        // if the username and email are found in the database, log them in and take them to the home page
 		if($check_user == 1){
 			$_SESSION['user_email'] = $email;
 
